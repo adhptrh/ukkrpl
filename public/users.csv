@@ -1,7 +1,7 @@
-﻿nik,nama
-1234567890123456,Adhika
-1234567890123457,Eira
-123,Hello
-12345,oke
-987,Testing
-98776,Mantap
+﻿nik,nama,password
+1234567890123456,Adhika,123
+1234567890123457,Eira,123
+123,Hello,123
+12345,oke,123
+987,Testing,123
+98776,Mantap,123
