@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-class User extends BaseModel  {
+class User_model extends BaseModel  {
 
     public static function authenticate($nik, $nama) {
         $data = BaseModel::csvFileToJson("users.csv");

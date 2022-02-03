@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Controllers;
-use App\Models\User;
+use App\Models\User_model;
 use Config\Services;
 
 class Auth extends BaseController
 {
     public function login()
     {
-        if (User::authenticate($this->request->getVar('nik'), $this->request->getVar('nama')))
+        if (User_model::authenticate($this->request->getVar('nik'), $this->request->getVar('nama')))
         {
             Services::session()->set("nik", $this->request->getVar('nik'));
             return redirect()->to(base_url('/'));
@@ -19,7 +19,7 @@ class Auth extends BaseController
     }
 
     public function register() {
-        $cond = User::create(
+        $cond = User_model::create(
             $this->request->getVar("nik"), 
             $this->request->getVar("nama")
         );
