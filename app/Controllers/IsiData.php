@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\User;
+use App\Models\User_model;
 use Config\Services;
 
 class IsiData extends BaseController
@@ -18,7 +18,7 @@ class IsiData extends BaseController
             return redirect()->to(base_url('/login'));
         }
 
-        $userdata = User::findByNIK(Services::session()->get("nik"));
+        $userdata = User_model::findByNIK(Services::session()->get("nik"));
         return view("isidata", ["userdata"=>$userdata]);
     }
 }
