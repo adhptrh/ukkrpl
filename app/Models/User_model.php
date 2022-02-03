@@ -4,11 +4,11 @@ namespace App\Models;
 
 class User_model extends BaseModel  {
 
-    public static function authenticate($nik, $nama) {
+    public static function authenticate($nik, $password) {
         $data = BaseModel::csvFileToJson("users.csv");
         var_dump($data[0]);
         foreach ($data as $key => $value) {
-            if ($value['nik'] == $nik && $value['nama'] == $nama) {
+            if ($value['nik'] == $nik && $value['password'] == $password) {
                 return true;
             }
         }
@@ -16,7 +16,7 @@ class User_model extends BaseModel  {
     }
 
 
-    public static function create($nik, $nama) {
+    public static function create($nik, $nama, $password) {
         $data = BaseModel::csvFileToJson("users.csv");
         $exists = false;
         foreach ($data as $key => $value) {
@@ -29,7 +29,7 @@ class User_model extends BaseModel  {
             return -1;
         }
 
-        file_put_contents("users.csv","\r\n".$nik.",".$nama,FILE_APPEND);
+        file_put_contents("users.csv","\r\n".$nik.",".$nama.",".$password,FILE_APPEND);
         return 1;
     }
 

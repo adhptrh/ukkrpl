@@ -7,10 +7,10 @@
 <?=$this->include("include/alert")?>
 <form class="user" method="post" action="/auth/login">
     <div class="form-group">
-        <input type="text" class="form-control form-control-user" name="nik" aria-describedby="emailHelp" placeholder="NIK">
+        <input type="text" class="form-control form-control-user" name="nik" placeholder="NIK">
     </div>
     <div class="form-group">
-        <input type="text" class="form-control form-control-user" name="nama" placeholder="Nama">
+        <input type="password" class="form-control form-control-user" name="password" placeholder="password">
     </div>
     <div class="form-group">
         <div class="custom-control custom-checkbox small">

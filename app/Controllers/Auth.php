@@ -8,7 +8,7 @@ class Auth extends BaseController
 {
     public function login()
     {
-        if (User_model::authenticate($this->request->getVar('nik'), $this->request->getVar('nama')))
+        if (User_model::authenticate($this->request->getVar('nik'), $this->request->getVar('password')))
         {
             Services::session()->set("nik", $this->request->getVar('nik'));
             return redirect()->to(base_url('/'));
@@ -21,7 +21,8 @@ class Auth extends BaseController
     public function register() {
         $cond = User_model::create(
             $this->request->getVar("nik"), 
-            $this->request->getVar("nama")
+            $this->request->getVar("nama"),
+            $this->request->getVar("password"),
         );
         
         if ($cond >= 0) {
