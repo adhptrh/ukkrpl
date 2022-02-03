@@ -19,6 +19,15 @@ class Auth extends BaseController
     }
 
     public function register() {
+
+        $password = $this->request->getVar('password');
+        $confirm_password = $this->request->getVar('confirm_password');
+
+        if ($password != $confirm_password) {
+            Services::session()->setFlashdata("failed", "Password and Confirm Password must be same");
+            return redirect()->to(base_url('/register'));
+        }
+
         $cond = User_model::create(
             $this->request->getVar("nik"), 
             $this->request->getVar("nama"),

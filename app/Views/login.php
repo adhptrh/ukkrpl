@@ -10,7 +10,7 @@
         <input type="text" class="form-control form-control-user" name="nik" placeholder="NIK">
     </div>
     <div class="form-group">
-        <input type="password" class="form-control form-control-user" name="password" placeholder="password">
+        <input type="password" class="form-control form-control-user" name="password" placeholder="Password">
     </div>
     <div class="form-group">
         <div class="custom-control custom-checkbox small">
