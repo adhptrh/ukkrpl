@@ -8,4 +8,9 @@ class CatatanPerjalanan_model extends BaseModel  {
         file_put_contents("catatan_perjalanan.csv","\r\n".$tanggal.",".$waktu.",".$lokasi.",".$suhu,FILE_APPEND);
         return true;
     }
+
+    public static function getAll() {
+        $data = BaseModel::csvFileToJson("catatan_perjalanan.csv");
+        return $data;
+    }
 }

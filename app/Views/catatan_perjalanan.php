@@ -17,30 +17,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>01-01-2022</td>
-                        <td>12:00</td>
-                        <td>Toko Buku Hangat</td>
-                        <td>36.2</td>
-                    </tr>
-                    <tr>
-                        <td>01-01-2022</td>
-                        <td>12:00</td>
-                        <td>Toko Buku Hangat</td>
-                        <td>36.2</td>
-                    </tr>
-                    <tr>
-                        <td>01-01-2022</td>
-                        <td>12:00</td>
-                        <td>Toko Buku Hangat</td>
-                        <td>36.2</td>
-                    </tr>
-                    <tr>
-                        <td>01-01-2022</td>
-                        <td>12:00</td>
-                        <td>Toko Buku Hangat</td>
-                        <td>36.2</td>
-                    </tr>
+                    <?php foreach ($catatan_perjalanan as $catatan): ?>
+                        <tr>
+                            <td><?= $catatan["tanggal"] ?></td>
+                            <td><?= $catatan["waktu"] ?></td>
+                            <td><?= $catatan["lokasi"] ?></td>
+                            <td><?= $catatan["suhu"] ?></td>
+                        </tr>
+                    <?php endforeach ?>
                 </tbody>
             </table>
         </div>
