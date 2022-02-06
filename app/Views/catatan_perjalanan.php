@@ -7,6 +7,12 @@
     </div>
     <div class="card-body">
         <div class="table-responsive mb-4">
+            <p>Urutkan berdasarkan <span><select id="urutkan" class="mx-2 rounded p-2 border small">
+                <option value="0">Tanggal</option>
+                <option value="1">Waktu</option>
+                <option value="2">Lokasi</option>
+                <option value="3">Suhu Tubuh</option>
+            </select><button id="btnUrutkan" class="btn btn-primary">Urutkan</button></span></p>
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
@@ -28,12 +34,15 @@
                 </tbody>
             </table>
         </div>
-            <a href="/isidata" class="btn btn-primary btn-icon-split float-right">
-                <span class="icon text-white-50">
-                    <i class="fas fa-flag"></i>
-                </span>
-                <span class="text">Isi Catatan Perjalanan</span>
-            </a>
+        <a href="/isidata" class="btn btn-primary  float-right">
+            <span class="text">Isi Catatan Perjalanan</span>
+        </a>
+        <script>
+            $("#dataTable").DataTable().order([document.getElementById("urutkan").value, 'desc']).draw();
+            document.getElementById("btnUrutkan").onclick = ()=>{
+                $("#dataTable").DataTable().order([document.getElementById("urutkan").value, 'desc']).draw();
+            }
+        </script>
     </div>
 </div>
 
