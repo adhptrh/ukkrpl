@@ -5,7 +5,7 @@
     <h1 class="h4 text-gray-900 mb-4">Welcome Back</h1>
 </div>
 <?=$this->include("include/alert")?>
-<form class="user" method="post" action="/auth/login">
+<form class="user" method="post" action="<?= base_url() ?>/auth/login">
     <div class="form-group">
         <input type="text" class="form-control form-control-user" name="nik" placeholder="NIK">
     </div>
@@ -25,6 +25,6 @@
 </form>
 <hr>
 <div class="text-center">
-    <a class="small" href="/register">Saya Pengguna Baru</a>
+    <a class="small" href="<?= base_url() ?>/register">Saya Pengguna Baru</a>
 </div>
 <?= $this->endSection() ?>

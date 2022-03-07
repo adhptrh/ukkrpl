@@ -34,7 +34,7 @@
                 </tbody>
             </table>
         </div>
-        <a href="/isidata" class="btn btn-primary  float-right">
+        <a href="<?= base_url() ?>/isidata" class="btn btn-primary  float-right">
             <span class="text">Isi Catatan Perjalanan</span>
         </a>
         <script>

@@ -2,7 +2,7 @@
 
 <?=$this->section("content")?>
 <p class="mb-4">Selamat datang <?= $userdata["nama"] ?> di aplikasi Peduli Diri!</p>
-<a href="/isidata" class="btn btn-primary btn-icon-split">
+<a href="<?= base_url() ?>/isidata" class="btn btn-primary btn-icon-split">
     <span class="icon text-white-50">
         <i class="fas fa-flag"></i>
     </span>

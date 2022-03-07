@@ -21,7 +21,7 @@ class CatatanPerjalanan extends BaseController
 
         $data = [
             "userdata" => User_model::findByNIK(Services::session()->get("nik")),
-            "catatan_perjalanan" => CatatanPerjalanan_model::getAll()
+            "catatan_perjalanan" => CatatanPerjalanan_model::getByNIK(Services::session()->get("nik"))
         ];
 
         $userdata = User_model::findByNIK(Services::session()->get("nik"));

@@ -7,8 +7,12 @@
         <h6 class="m-0 font-weight-bold text-primary">Isi Data Perjalanan</h6>
     </div>
     <div class="card-body">
-        <form method="post" action="/isidata/simpan">
-
+        <form method="post" action="<?= base_url() ?>/isidata/simpan">
+            <div class="mb-4">
+                <p>NIK</p>
+                <input value="<?= $userdata["nik"] ?>" class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2" disabled>
+                <input name="nik" type="hidden" value="<?= $userdata["nik"] ?>" class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
+            </div>
             <div class="mb-4">
                 <p>Tanggal</p>
                 <input name="tanggal" type="date" class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
